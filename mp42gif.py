@@ -12,6 +12,15 @@ import shutil
 init()
 parser = argparse.ArgumentParser(description='Specify how your video gets converted into a GIF')
 parser.add_argument(
+    '--input',
+    action='store',
+    dest='VIDIN',
+    type=str,
+    help='--input <str>(file path to your mp4 file)',
+    default=None,
+    required=False
+)
+parser.add_argument(
     '--slice',
     action='store_true',
     dest='should_slice',
@@ -311,13 +320,13 @@ global GARBAGE
 global WORKDIR
 ERRCATCH = 0
 GARBAGE = []
-
-openafile()
-VIDIN = TIOW.name
-startframe = 916
-endframe = 1363
+VIDIN = results.VIDIN.replace("\\","/")
+if VIDIN == None:
+    openafile()
+    VIDIN = TIOW.name
 
 FOLRA = []
+print(VIDIN)
 count = 0
 for i in VIDIN.split("."):
     if count < (len(VIDIN.split(".")) - 1):
