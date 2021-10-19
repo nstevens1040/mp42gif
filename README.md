@@ -4,7 +4,11 @@ Python script that uses [ffmpeg-python](https://github.com/kkroening/ffmpeg-pyth
 Download the executable  
    - **Windows**  
 ```ps1
-iwr "https://github.com/nstevens1040/mp42gif/releases/download/v1.0.0/mp42gif.exe" -OutFile "mp42gif.exe"
+# in Windows PowerShell
+[System.Net.WebClient]::New().DownloadFile(
+    "https://github.com/nstevens1040/mp42gif/releases/download/v1.0.0/mp42gif.exe",
+    "$($PWD.Path)\mp42gif.exe"
+)
 Unblock-File .\mp42gif.exe
 ```  
    - **macOS / nix**  
