@@ -5,6 +5,7 @@ Download the executable
    - **Windows**  
 ```ps1
 iwr "https://github.com/nstevens1040/mp42gif/releases/download/v1.0.0/mp42gif.exe" -OutFile "mp42gif.exe"
+Unblock-File .\mp42gif.exe
 ```  
    - **macOS / nix**  
 ```ps1
