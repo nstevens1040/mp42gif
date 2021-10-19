@@ -8,4 +8,5 @@ iwr "https://github.com/nstevens1040/mp42gif/releases/download/v1.0.0/mp42gif.ex
    - **macOS / nix**  
 ```ps1
 curl "https://github.com/nstevens1040/mp42gif/releases/download/v1.0.0/mp42gif" --output "mp42gif"
+chmod +x ./mp42gif
 ```  
