@@ -1,5 +1,5 @@
 # mp42gif
-Python script to convert an MP4 file into an animated GIF.  
+Python script that uses [ffmpeg-python](https://github.com/kkroening/ffmpeg-python) to convert an MP4 file into an animated GIF.  
 # Quick Start  
 Download the executable  
    - **Windows**  
