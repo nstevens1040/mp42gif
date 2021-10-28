@@ -31,14 +31,11 @@ usage: mp42gif.exe [-h] [--input VIDIN] [--slice] [--starttime SLICE_TIME] [--st
 Specify how your video gets converted into a GIF
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --input VIDIN         --input <str>(file path to your mp4 file)
-  --slice               --slice --starttime <int>(start time in seconds) --stoptime <int>(end time in seconds) :: both arguments reflect the amount of seconds from the beginning of the video
-  --starttime SLICE_TIME
-                        --starttime <int>(start time in seconds from the beginning of the video)
-  --stoptime SLICE_TIME
-                        --stoptime <int>(stop time in seconds from the beginning of the video)
-  --playbackrate PBRATE
-                        --playbackrate <float>(integer or decimal that is non-negative, non-zero, & not 1) :: numbers greater than 1 speed the video up and numbers between 0 and 1 slow the video down
-  --blend               --blend <bool>(true or false) :: Determines whether the video gets "minterpolated"
+  -h, --help             show this help message and exit
+  --input VIDIN             --input <str>(file path to your mp4 file)
+  --slice                   --slice --starttime <int>(start time in seconds) --stoptime <int>(end time in seconds) :: both arguments reflect the amount of seconds from the beginning of the video
+  --starttime SLICE_TIME    --starttime <int>(start time in seconds from the beginning of the video)
+  --stoptime SLICE_TIME     --stoptime <int>(stop time in seconds from the beginning of the video)
+  --playbackrate PBRATE     --playbackrate <float>(integer or decimal that is non-negative, non-zero, & not 1) :: numbers greater than 1 speed the video up and numbers between 0 and 1 slow the video down
+  --blend                   --blend <bool>(true or false) :: Determines whether the video gets "minterpolated"
 ```  
