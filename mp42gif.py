@@ -24,25 +24,25 @@ parser.add_argument(
     '--slice',
     action='store_true',
     dest='should_slice',
-    help='--slice --starttime <int>(start time in seconds) --stoptime <int>(end time in seconds) :: both arguments reflect the amount of seconds from the beginning of the video',
+    help='--slice --startframe <int>(the frame from wich to start capturing the video slice) --stopframe <int>(the frame from wich to stop capturing the video slice) :: both arguments reflect the amount of frames relative to the start of the video',
     default=None,
     required=False
 )
 parser.add_argument(
-    '--starttime', 
+    '--startframe', 
     action='append', 
     dest='slice_time',
     type=int,
-    help='--starttime <int>(start time in seconds from the beginning of the video)',
+    help='--startframe <int>(the frame from wich to start capturing the video slice)',
     default=None,
     required='--slice' in sys.argv
 )
 parser.add_argument(
-    '--stoptime', 
+    '--stopframe', 
     action='append', 
     dest='slice_time',
     type=int,
-    help='--stoptime <int>(stop time in seconds from the beginning of the video)',
+    help='--stopframe <int>(the frame from wich to stop capturing the video slice)',
     default=None,
     required='--slice' in sys.argv
 )
@@ -146,7 +146,7 @@ def mp4Slice(VIDIN,startframe,endframe):
     print(Fore.GREEN + "Sliced output file will be saved to:\n    ", end='')
     print(Fore.YELLOW + "'./" + VIDDIR + "'")
     try:
-        ffmpeg.run(ffmpeg.output(ffmpeg.input(VIDIN).trim(start_frame=results.startframe,end_frame=results.endframe),VIDOUT),capture_stdout=True, capture_stderr=True, input=None, quiet=True, overwrite_output=True)
+        ffmpeg.run(ffmpeg.output(ffmpeg.input(VIDIN).trim(start_frame=startframe,end_frame=endframe),VIDOUT),capture_stdout=True, capture_stderr=True, input=None, quiet=True, overwrite_output=True)
     except:
         ERRCATCH = 1
     GARBAGE.append(VIDOUT)
