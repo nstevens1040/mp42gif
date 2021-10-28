@@ -320,11 +320,10 @@ global GARBAGE
 global WORKDIR
 ERRCATCH = 0
 GARBAGE = []
-VIDIN = results.VIDIN.replace("\\","/")
-if VIDIN == None:
+if results.VIDIN == None:
     openafile()
     VIDIN = TIOW.name
-
+VIDIN = results.VIDIN.replace("\\","/")
 FOLRA = []
 print(VIDIN)
 count = 0
